@@ -46,3 +46,7 @@ body {
     border-radius: 0px;
     font-size: 1.3em;
 }
+
+#success-caption {
+    border: 0px #ffffff;
+}
