@@ -50,3 +50,24 @@ body {
 #success-caption {
     border: 0px #ffffff;
 }
+
+.error-msg {
+    color: #c60000;
+}
+
+#admin-email, #pwd {
+    height: 50px;
+    font-size: 1.2em;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.login-btn {
+    height: 50px;
+    font-size: 1.5em;
+    color: #ffffff;
+    background-color: #a30082;
+    border: 1px solid #a30082;
+    border-radius: 0px;
+    width: 100%;
+}
