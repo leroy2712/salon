@@ -11,7 +11,14 @@
   <body>
     <div class="container-fluid">
       <nav class="navbar navbar-inverse" id="nav">
-        <h1 class="text-center">Zuri Hair Salon</p>
+        <h1 class="navbar-text text-center">Zuri Hair Salon</h1>
+        <div class="text-center">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">HOME</a></li>
+          <li><a href="#">OUR STYLISTS</a></li>
+          <li><a href="#">SIGN IN</a></li>
+        </ul>
+        </div>
       </nav>
       #parse( $template )
 
@@ -24,7 +31,7 @@
               <br>
               <form method="post" action="/">
                   <div class="form-group">
-                      <input type="email" class="form-control" placeholder="Enter Your Email" id="email" name="email">
+                      <input type="email" class="form-control" placeholder="Enter Your Email" id="email" name="email" required>
                   </div>
                   <div class="text-center">
                       <button type="submit" class="btn btn-default" id="newsletter">Subscribe</button>

@@ -1,24 +1,24 @@
 <div class="row">
-  <div class="col-sm-3"></div>
-  <div class="col-sm-6">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
     <form method="post" action="/login">
       <div class="form-group">
         <div class="text-center">
           <label for="email">Email address:</label>
         </div>
-        <input type="email" class="form-control" id="admin-email" name="admin-email">
+        <input type="email" class="form-control" id="admin-email" name="admin-email" required>
       </div>
       <div class="form-group">
         <div class="text-center">
           <label for="pwd">Password:</label>
         </div>
-        <input type="password" class="form-control" id="pwd" name="pwd">
+        <input type="password" class="form-control" id="pwd" name="pwd" required>
       </div>
       <div class="checkbox">
         <label><input type="checkbox"> Remember me</label>
       </div>
-      <button type="submit" class="btn btn-default">Log In</button>
+      <button type="submit" class="login-btn">Log In</button>
     </form>
   </div>
-  <div class="col-sm-3"></div>
+  <div class="col-sm-4"></div>
 </div>

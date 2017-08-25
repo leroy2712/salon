@@ -50,3 +50,32 @@ body {
 #success-caption {
     border: 0px #ffffff;
 }
+
+.error-msg {
+    color: #c60000;
+}
+
+#admin-email, #pwd {
+    height: 50px;
+    font-size: 1.2em;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.login-btn {
+    height: 50px;
+    font-size: 1.5em;
+    color: #ffffff;
+    background-color: #383838;
+    border: 1px solid #383838;
+    border-radius: 0px;
+    width: 100%;
+}
+
+.login-btn:hover {
+    border: 1px solid #a30082;
+    background-color: #a30082;
+    transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -webkit-transition: .25s ease-in-out;
+}
