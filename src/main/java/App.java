@@ -68,8 +68,8 @@ public class App {
     }, new VelocityTemplateEngine());
 
     get("/stylists/:id", (request, response) -> {
-      Map<String, Object> model = new HashMap<String, Object>();
-      model.put("stylists", Stylists.find(Integer.parseInt(request.params(":id"))));
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("stylist", Stylists.finds(Integer.parseInt(request.params(":id"))));
       model.put("template", "templates/stylist.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

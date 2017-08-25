@@ -35,17 +35,17 @@ public class Stylists {
 
     @Override
     public boolean equals(Object _testObj) {
-      if(!(_testObj instanceof Stylists))
-        return false;
-      else {
-        Stylists stylistCast = (Stylists) _testObj;
-        return this.id == stylistCast.getId() && this.name.equals(stylistCast.getName());
-      }
+        if (!(_testObj instanceof Stylists))
+            return false;
+        else {
+            Stylists stylistCast = (Stylists) _testObj;
+            return this.id == stylistCast.getId() && this.name.equals(stylistCast.getName());
+        }
     }
 
     public static List<Stylists> getAll() {
         String sql = "SELECT * FROM STYLISTS";
-        try(Connection conn = DB.sql2o.open()){
+        try (Connection conn = DB.sql2o.open()) {
             return conn.createQuery(sql).executeAndFetch(Stylists.class);
         }
     }
@@ -54,13 +54,13 @@ public class Stylists {
         this.name = name;
     }
 
-    public static Stylists find (int id) {
-        try(Connection conn = DB.sql2o.open()){
+    public static Stylists finds(int id) {
+        try (Connection conn = DB.sql2o.open()) {
             String sql = "SELECT * FROM stylists WHERE id=:id";
-            Stylists stylists = conn.createQuery(sql)
-                                    .addParameter("id", id)
-                                    .executeAndFetchFirst(Stylists.class);
-            return stylists;
+            Stylists stylist = conn.createQuery(sql)
+            .addParameter("id", id)
+            .executeAndFetchFirst(Stylists.class);
+            return stylist;
         }
     }
 }
