@@ -1,3 +1,19 @@
-<h1>
-
-</h1>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <h2 class="text-center">OUR STYLISTS</h2>
+    <div class="owl-carousel owl-theme">
+      #foreach ($stylist in $stylists)
+        <div class="item">
+          <div class="thumbnail">
+            <img src=$stylist.getImage()>
+            <div class="caption">
+              <a class="btn" id="stylist-btn" href="/stylists:id">$stylist.getName()</a>
+            </div>
+          </div>
+        </div>
+        #end
+    </div>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
