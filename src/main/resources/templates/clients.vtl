@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Client Name</th>
+          <th>Client Email</th>
+          <th>Stylist Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        #foreach ($client in $clients)
+        <tr>
+          <td>$client.getClient()</td>
+          <td>$client.getEmail()</td>
+          <td>$client.getName()</td>
+        </tr>
+        #end
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-3"></div>
+</div>

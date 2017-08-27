@@ -44,7 +44,7 @@ public class Stylists {
     }
 
     public static List<Stylists> getAll() {
-        String sql = "SELECT * FROM STYLISTS";
+        String sql = "SELECT * FROM stylists";
         try (Connection conn = DB.sql2o.open()) {
             return conn.createQuery(sql).executeAndFetch(Stylists.class);
         }
