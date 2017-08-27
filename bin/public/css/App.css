@@ -103,3 +103,13 @@ body {
     -moz-transition: .25s ease-in-out;
     -webkit-transition: .25s ease-in-out;
 }
+
+#stylist-btn {
+    color: #ffffff;
+    background-color: #a30082;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.4em;
+    border-radius: 0px;
+}

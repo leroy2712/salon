@@ -113,3 +113,18 @@ body {
     font-size: 1.4em;
     border-radius: 0px;
 }
+
+.btn-stylists {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5em;
+    color: #ffffff;
+    background-color: #383838;
+    margin-bottom: 15px;
+}
+
+.btn-profile {
+    width: 200px;
+    border-radius: 0px;
+    height: 50px;
+}

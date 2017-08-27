@@ -57,10 +57,24 @@ public class Stylists {
     public static Stylists finds(int id) {
         try (Connection conn = DB.sql2o.open()) {
             String sql = "SELECT * FROM stylists WHERE id=:id";
-            Stylists stylist = conn.createQuery(sql)
-            .addParameter("id", id)
-            .executeAndFetchFirst(Stylists.class);
+            Stylists stylist = conn.createQuery(sql).addParameter("id", id).executeAndFetchFirst(Stylists.class);
             return stylist;
+        }
+    }
+
+    public void update(String name, int age, String experience, String specialties) {
+        try (Connection con = DB.sql2o.open()) {
+            String sql = "UPDATE stylists SET name= :name, age= :age, experience= :experience, specialties= :specialties WHERE id= :id";
+            con.createQuery(sql).addParameter("name", name).addParameter("age", age)
+                    .addParameter("experience", experience).addParameter("specialties", specialties)
+                    .addParameter("id", id).executeUpdate();
+        }
+    }
+
+    public void delete() {
+        try (Connection con = DB.sql2o.open()) {
+            String sql = "DELETE FROM stylists WHERE id = :id;";
+            con.createQuery(sql).addParameter("id", id).executeUpdate();
         }
     }
 }
