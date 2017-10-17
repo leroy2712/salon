@@ -8,6 +8,15 @@ import static spark.Spark.*;
 
 public class App {
   public static void main(String[] args) {
+    ProcessBuilder process = new ProcessBuilder();
+    Integer port;
+    if (process.environment().get("PORT") != null) {
+        port = Integer.parseInt(process.environment().get("PORT"));
+    } else {
+        port = 4567;
+    }
+
+    setPort(port);
     staticFileLocation("/public");
     String layout = "templates/layout.vtl";
 
@@ -71,6 +80,13 @@ public class App {
       HashMap<String, Object> model = new HashMap<String, Object>();
       model.put("stylist", Stylists.finds(Integer.parseInt(request.params(":id"))));
       model.put("template", "templates/stylist.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/stylists/:id/clients", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("stylist", Stylists.findAll(Integer.parseInt(request.params(":id"))));
+      model.put("template", "templates/stylist-clients.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

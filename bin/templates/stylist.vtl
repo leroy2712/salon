@@ -1,10 +1,87 @@
 <div class="row">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-6">
-  <img src=$stylist.getImage()>
+  <div class="col-sm-3"></div>
+  <div class="col-sm-3">
+    <div class="thumbnail">
+      <img src=$stylist.getImage()>
+      <div class="caption">
+        <h4>$stylist.getName()</h4>
+        <h4>$stylist.getAge()</h4>
+        <h4>$stylist.getExperience()</h4>
+        <h4>$stylist.getSpecialties()</h4>
+      </div>
+    </div>
   </div>
-  <div class="col-sm-4">
-    <h3 class="text-center">$stylist.getName()</h3>
+  <div class="col-sm-3">
+    <button class="btn btn-stylists" id="btn-update" data-toggle="modal" data-target="#update">Update Information</button>
+    <!-- update modal -->
+    <div id="update" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Update $stylist.getName()'s Profile</h4>
+          </div>
+          <div class="modal-body">
+            <form method="post" action="/stylists/$stylist.getId()/update">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name">
+              </div>
+              <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" class="form-control" id="age" name="age">
+              </div>
+              <div class="form-group">
+                <label for="experience">Experience:</label>
+                <input type="text" class="form-control" id="experience" name="experience">
+              </div>
+              <div class="form-group">
+                <label for="specialties">Specialties:</label>
+                <input type="text" class="form-control" id="specialties" name="specialties">
+              </div>
+              <button class="btn" type="submit">Submit Changes</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- update modal -->
+    <br>
+
+    <a class="btn btn-stylists" id="btn-clients" href=/stylists/$stylist.getId()/clients>View Clients</a>
+    <br>
+
+    <button class="btn btn-stylists" id="btn-update" data-toggle="modal" data-target="#delete">Delete Stylist</button>
+    <!-- delete modal -->
+    <div id="delete" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3 class="modal-title text-center">Delete $stylist.getName()</h3>
+          </div>
+          <div class="modal-body">
+            <h4 class="text-center">Are you sure you want to delete $stylist.getName()'s profile?</h4>
+            <form action="/stylists/$stylist.getId()/delete" method="post">
+              <button type="button" class="btn btn-danger btn-profile">DELETE</button>
+            </form>
+            <br>
+            <button type="button" class="btn btn-success btn-profile" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- delete modal -->
+
+    <br>
   </div>
-  <div class="col-sm-2"></div>
+  <div class="col-sm-3"></div>
 </div>

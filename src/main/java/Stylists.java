@@ -62,6 +62,14 @@ public class Stylists {
         }
     }
 
+    public static Stylists findAll(int id) {
+        try (Connection conn = DB.sql2o.open()) {
+            String sql = "SELECT * FROM clients WHERE id=:id";
+            Stylists stylist = conn.createQuery(sql).addParameter("id", id).executeAndFetchFirst(Stylists.class);
+            return stylist;
+        }
+    }
+
     public void update(String name, int age, String experience, String specialties) {
         try (Connection con = DB.sql2o.open()) {
             String sql = "UPDATE stylists SET name= :name, age= :age, experience= :experience, specialties= :specialties WHERE id= :id";

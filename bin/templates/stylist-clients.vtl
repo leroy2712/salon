@@ -6,15 +6,13 @@
         <tr>
           <th>Client Name</th>
           <th>Client Email</th>
-          <th>Stylist Name</th>
         </tr>
       </thead>
       <tbody>
-        #foreach ($client in $clients)
+        #foreach ($client in $stylist)
         <tr>
           <td>$client.getClient()</td>
           <td>$client.getEmail()</td>
-          <td>$client.getName()</td>
         </tr>
         #end
       </tbody>
